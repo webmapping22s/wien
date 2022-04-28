@@ -33,3 +33,7 @@ let layerControl = L.control.layers({
 
 layerControl.expand();
 
+let sightLayer = L.featureGroup();
+
+layerControl.addOverlay(sightLayer, "Sehenswürdigkeiten");
+
