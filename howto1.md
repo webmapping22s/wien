@@ -239,4 +239,12 @@
         L.control.minimap() == new  L.Control.MiniMap()
         ```
 
-    * über das Options-Objekt von `L.Control.MiniMap` können wir die Übersichtskarte ein-/ausklappbar machen ... das kommt als Workload ;-)
+    * über das Options-Objekt von `L.Control.MiniMap` können wir die Übersichtskarte noch ein-/ausklappbar machen
+
+        ```javascript
+        let miniMap = new L.Control.MiniMap(
+            L.tileLayer.provider("BasemapAT"), {
+                toggleDisplay: true
+            }
+        ).addTo(map);
+        ```
