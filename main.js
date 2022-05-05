@@ -55,6 +55,7 @@ let miniMap = new L.Control.MiniMap(
     }
 ).addTo(map);
 
+// Sehenswürdigkeiten
 async function loadSites(url) {
     let response = await fetch(url);    
     let geojson = await response.json();
