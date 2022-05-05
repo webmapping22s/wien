@@ -48,7 +48,5 @@ L.control.scale({
 L.control.fullscreen().addTo(map);
 
 let miniMap = new L.Control.MiniMap(
-    L.tileLayer.provider("BasemapAT"), {
-        toggleDisplay: true
-    }
+    L.tileLayer.provider("BasemapAT")
 ).addTo(map);
