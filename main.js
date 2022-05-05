@@ -67,6 +67,7 @@ async function loadSites(url) {
 
     L.geoJSON(geojson, {
         pointToLayer: function(geoJsonPoint, latlng) {
+            //L.marker(latlng).addTo(map)
             //console.log(geoJsonPoint.properties.NAME);
             let popup = `
                 <img src="${geoJsonPoint.properties.THUMBNAIL}" alt=""><br>
@@ -75,7 +76,13 @@ async function loadSites(url) {
                 Adresse: ${geoJsonPoint.properties.ADRESSE}<br>
                 <a href="${geoJsonPoint.properties.WEITERE_INF}">Weblink</a>
             `;
-            return L.marker(latlng).bindPopup(popup);
+            return L.marker(latlng, {
+                icon: L.icon({
+                    iconUrl: "icons/photo.png",
+                    iconAnchor: [16, 37],
+                    popupAnchor: [0, -37]
+                })
+            }).bindPopup(popup);
         }
     }).addTo(overlay);
 }
