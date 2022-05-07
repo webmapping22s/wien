@@ -1,4 +1,4 @@
-# Wien Beispiel HOWTO (Teil 2) - Icons für Punktlayer verwenden
+# Wien Beispiel HOWTO (Teil 3) - Icons für Punktlayer verwenden
 
 ## Layer Sehenswürdigkeiten verfeinern
 
