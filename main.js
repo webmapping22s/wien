@@ -181,6 +181,14 @@ async function loadHotels(url) {
                     Web: <a href="${geoJsonPoint.properties.WEBLINK1}" target="Wien">${geoJsonPoint.properties.WEBLINK1}</a>
                 </address>
             `;
+            let icon;
+            if (geoJsonPoint.properties.BETRIEBSART == "H") {
+                icon = "hotel_0star";
+            } else if (geoJsonPoint.properties.BETRIEBSART == "P") {
+                icon = "lodging_0star";
+            } else {
+                icon = "apartment-2";
+            }
             return L.marker(latlng, {
                 icon: L.icon({
                     iconUrl: `icons/hotel_0star.png`,
