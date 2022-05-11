@@ -191,7 +191,7 @@ async function loadHotels(url) {
             }
             return L.marker(latlng, {
                 icon: L.icon({
-                    iconUrl: `icons/hotel_0star.png`,
+                    iconUrl: `icons/${icon}.png`,
                     iconAnchor: [16, 37],
                     popupAnchor: [0, -37]
                 })
