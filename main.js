@@ -165,8 +165,21 @@ async function loadHotels(url) {
             //L.marker(latlng).addTo(map)
             //console.log(geoJsonPoint.properties);
             let popup = `
-                <strong>${geoJsonPoint.properties.LINE_NAME}</strong><br>
-                Station ${geoJsonPoint.properties.STAT_NAME}
+                <p>
+                    <strong>
+                        ${geoJsonPoint.properties.BETRIEB} -
+                        ${geoJsonPoint.properties.BETRIEBSART_TXT}
+                        ${geoJsonPoint.properties.KATEGORIE_TXT}
+                    </strong>
+                    <br>
+                    ${geoJsonPoint.properties.ADRESSE}
+                </p>
+                <hr>
+                <address>
+                    Tel.:${geoJsonPoint.properties.KONTAKT_TEL}<br>
+                    E-Mail: <a href="mailto:${geoJsonPoint.properties.KONTAKT_EMAIL}">${geoJsonPoint.properties.KONTAKT_EMAIL}</a><br>
+                    Web: <a href="${geoJsonPoint.properties.WEBLINK1}" target="Wien">${geoJsonPoint.properties.WEBLINK1}</a>
+                </address>
             `;
             return L.marker(latlng, {
                 icon: L.icon({
