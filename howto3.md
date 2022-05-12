@@ -192,4 +192,78 @@ icon: L.icon({
 
 ## Layer Hotels und Unterkünfte verfeinern
 
-**...**
+Bevor wir die Funktion `laodHotels` verändern, besorgen wir uns drei Icons für die Hotels und Unterkünfte und speichern sie im Verzeichnis `icons/`
+
+* Icon Hotel, Farbe PURPLE - `#B10DC9`, Icon [hotel_0star](https://mapicons.mapsmarker.com/markers/restaurants-bars/hotels/hotel/)
+
+* Icon Pension, Farbe PURPLE - `#B10DC9`, Icon [lodging_0star](https://mapicons.mapsmarker.com/markers/restaurants-bars/hotels/lodging/)
+
+* Icon Appartment, Farbe PURPLE - `#B10DC9`, Icon [apartment-2](https://mapicons.mapsmarker.com/markers/friends-family/apartment/)
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/b0782a9123a6a7622c4622a19a0373a17dea113a)
+
+Danach erzeugen wir den Layer für Hotels und Unterkünfte wieder mit *Copy-Paste*, diesmal des Codes der Haltestellen und ein paar kleinen Änderungen in den bekannten **vier Schritten**
+
+1. wir kopieren den geamten `L.geoJSON()` Code der Haltestellen und überschreiben damit den bestehenden `L.geoJSON()` Aufruf in der Funktion `loadHotels`
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/5ef429cda320a06e2df9a4407df5761e6da70eb3)
+
+2. wir bessern den Popup-Code aus und verwenden die Attribute `ADRESSE`, `BETRIEB`, `BETRIEBSART_TXT`, `KATEGORIE_TXT`, `KONTAKT_EMAIL`, `KONTAKT_TEL`, und, `WEBLINK1`
+
+    ```javascript
+    let popup = `
+        <p>
+            <strong>
+                ${geoJsonPoint.properties.BETRIEB} -
+                ${geoJsonPoint.properties.BETRIEBSART_TXT}
+                ${geoJsonPoint.properties.KATEGORIE_TXT}
+            </strong>
+            <br>
+            ${geoJsonPoint.properties.ADRESSE}
+        </p>
+        <hr>
+        <address>
+            Tel.:${geoJsonPoint.properties.KONTAKT_TEL}<br>
+            E-Mail: <a href="mailto:${geoJsonPoint.properties.KONTAKT_EMAIL}">${geoJsonPoint.properties.KONTAKT_EMAIL}</a><br>
+            Web: <a href="${geoJsonPoint.properties.WEBLINK1}" target="Wien">${geoJsonPoint.properties.WEBLINK1}</a>
+        </address>
+    `;
+    ```
+
+    * `target="Wien"` bewirkt wieder, dass alle Weblinks im selben Tab geöffnet werden
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/939dec53c7fb1e24a61c915763e3a21f942f2064)
+
+3. wir bessern die `iconUrl` aus und verwenden vorerst `icons/hotel_0star.png` statt `icons/bus.png` für alle Icons. Die Unterscheidung nach Typen folgt später
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/80e9c62226d7d33bb0cff515cb5c5f4bae65ddc3)
+
+4. wir löschen den Kommentar beim Funktionsaufruf `loadHotels("https://...")` und aktivieren damit das Zeichnen des Hotel Layers
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/fabee948902f6595f06cc0d9af6ba3481de94a58)
+
+Bleibt noch, die Hotels und Unterkünfte nach Typen zu unterscheiden. Dazu verwenden wird das Attribut `BETRIEBSART` und ermitteln in einem `if, else if, else` Block das passende Icon für die Werte **H** (Hotel), **P** (Pension) und **A** (Appartment). Wir speichern den gefundenen Icon-Namen in einer Variablen `icon`, die wir vor der if-Abfrage initialisieren.
+
+```javascript
+let icon;
+if (geoJsonPoint.properties.BETRIEBSART == "H") {
+    icon = "hotel_0star";
+} else if (geoJsonPoint.properties.BETRIEBSART == "P") {
+    icon = "lodging_0star";
+} else {
+    icon = "apartment-2";
+}
+```
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/45f40531104fe01aa0dfab536ae8757f243ff073)
+
+Den gefundenen Icon-Namen setzen wir schließlich bei der `iconUrl` ein. Damit werden je nach Typ, verschiedene Icons angezeigt.
+
+```javascript
+icon: L.icon({
+    iconUrl: `icons/${icon}.png`,
+    // ...
+})
+```
+
+[🔗 COMMIT](https://github.com/webmapping/wien/commit/0c2da982920ec2817f1286991c38f1528c2185bf)
