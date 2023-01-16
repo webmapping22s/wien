@@ -13,7 +13,7 @@ sightLayer.addTo(map);
 */
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/adfb3a21c9836771681a8e395e8bec698203a1f3)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/adfb3a21c9836771681a8e395e8bec698203a1f3)
 
 ## GeoJSON als Datenformat
 
@@ -125,7 +125,7 @@ Eine Funktion ist vereinfacht gesagt ein Codeblock mit einem Namen, der "irgend 
     loadSites("https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SEHENSWUERDIGOGD&srsName=EPSG:4326&outputFormat=json");
     ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/4fb66807b69cddea912dce9fe61cf730f9211e5d)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/4fb66807b69cddea912dce9fe61cf730f9211e5d)
 
 * was passiert dabei?
 
@@ -152,7 +152,7 @@ async function loadSites(url) {
 }
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/d3f2b70585b285efc70fa509c4569032d09127c5)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/d3f2b70585b285efc70fa509c4569032d09127c5)
 
 Die Marker für die Sehenswürdigkeiten sind damit auf der Karte sichtbar
 
@@ -172,7 +172,7 @@ Den `L.geoJSON()` Layer müssen wir jetzt nur noch in das Overlay und nicht in d
 L.geoJSON(geojson).addTo(overlay);
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/7f12bbdd0676023f168c3d62e66dcdb227a8ae9a)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/7f12bbdd0676023f168c3d62e66dcdb227a8ae9a)
 
 Damit kann der Sehenswürdigkeiten Layer ein- und ausgeschaltet werden
 
@@ -185,27 +185,27 @@ Damit kann der Sehenswürdigkeiten Layer ein- und ausgeschaltet werden
     * Datensatz *Touristische Kraftfahrlinien Haltestellen Vienna Sightseeing Linie Standorte Wien*
     * Overlay Label "Haltestellen Vienna Sightseeing"
 
-    * [🔗 COMMIT](https://github.com/webmapping/wien/commit/1817ace1bb115bf27858867717b8fb69100a011e)
+    * [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/1817ace1bb115bf27858867717b8fb69100a011e)
 
 2. Funktion `loadLines`
     * Suche: *sightseeing*
     * Datensatz *Touristische Kraftfahrlinien Liniennetz Vienna Sightseeing Linie Wien*
     * Overlay Label "Liniennetz Vienna Sightseeing"
 
-    * [🔗 COMMIT](https://github.com/webmapping/wien/commit/58050e63908e0235642a991116e8d80dce71e454)
+    * [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/58050e63908e0235642a991116e8d80dce71e454)
 
 3. Funktion `loadZones`
     * Suche: *Fußgängerzonen*
     * Datensatz *Fußgängerzonen Wien*
     * Overlay Label "Fußgängerzonen"
 
-    * [🔗 COMMIT](https://github.com/webmapping/wien/commit/7eacbcde4b3ba3f2b273f3cefb4735207d0be82b)
+    * [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/7eacbcde4b3ba3f2b273f3cefb4735207d0be82b)
 
 4. Funktion `loadHotels`
     * Suche: *Hotels*
     * Datensatz *Hotels und Unterkünfte Standorte Wien*
     * Overlay Label "Hotels und Unterkünfte"
 
-    * [🔗 COMMIT](https://github.com/webmapping/wien/commit/6cfb837a8f68dbf43214cb6a9d961069ad19c9b4)
+    * [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/6cfb837a8f68dbf43214cb6a9d961069ad19c9b4)
 
 

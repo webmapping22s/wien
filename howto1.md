@@ -9,9 +9,9 @@
     * F1 -> Git: Clone
     * Desktop -> Select Repository Location -> Open in New Window
 
-* [Template](https://webmapping.github.io/templates/wien.zip) auspacken, Inhalte ins `wien`-Verzeichnis verschieben, alles hinzufügen und committen
+* [Template](https://webmapping22s.github.io/templates/wien.zip) auspacken, Inhalte ins `wien`-Verzeichnis verschieben, alles hinzufügen und committen
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/7b448eaa3dfdc5f5d553ca126c65a7c035e6d2a0)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/7b448eaa3dfdc5f5d553ca126c65a7c035e6d2a0)
 
     * was ist neu im Template? In `main.css` verwenden wir *display: flex*, um die drei Bereiche für das Wappen, die Überschrift und die Links gleichmäßig über die Breite zu verteilen.
 
@@ -54,7 +54,7 @@
     };
     ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/07a31dcc2a8e915ea6ce809d09b46291661e069f)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/07a31dcc2a8e915ea6ce809d09b46291661e069f)
 
 * Startlayer über Leaflet providers Plugin definieren und die Karte initialisieren
 
@@ -83,7 +83,7 @@
         });
         ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/700b9b7cbe2f9facfd002f99183bcca13266ca43)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/700b9b7cbe2f9facfd002f99183bcca13266ca43)
 
 
     * Layernavigation über [L.control.layers](https://leafletjs.com/reference.html#control-layers) mit dem Startlayer hinzufügen - wir verwenden `startLayer` als ersten Eintrag wieder, damit das Umschalten gleich funktioniert.
@@ -128,7 +128,7 @@
             layerControl.expand();
             ```
 
-        [🔗 COMMIT](https://github.com/webmapping/wien/commit/77a23452ac7c7ca442cc3c8d721132780b8c7ec0)
+        [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/77a23452ac7c7ca442cc3c8d721132780b8c7ec0)
 
 
 ### b) Overlay Layer für den Stephansdom (ein-/ausschaltbar) über L.featureGroup implementieren
@@ -147,7 +147,7 @@
         layerControl.addOverlay(sightLayer, "Sehenswürdigkeiten");
         ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/adaa7b0ab211af007d3a5e4e065180a3b7c647f3)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/adaa7b0ab211af007d3a5e4e065180a3b7c647f3)
 
 * Marker für Stephansdom hinzufügen: der Marker wird jetzt nicht an die `map` sondern an das Overlay `sightLayer`angehängt
 
@@ -155,7 +155,7 @@
     let mrk = L.marker([ stephansdom.lat, stephansdom.lng]).addTo(sightLayer);
     ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/6837847905527138fc66080e54edca8901c130bf)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/6837847905527138fc66080e54edca8901c130bf)
 
 * Overlay an die Karte hängen
 
@@ -163,7 +163,7 @@
     sightLayer.addTo(map);
     ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/9fd7c1a1addcf1a81fe12d4ee1f4e3f63e2f9e39)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/9fd7c1a1addcf1a81fe12d4ee1f4e3f63e2f9e39)
 
 
 ### c) Maßstab hinzufügen über L.control.scale
@@ -174,7 +174,7 @@
     L.control.scale().addTo(map);
     ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/61c6afc990a0eddf374bc9bda9b30956d4292bb3)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/61c6afc990a0eddf374bc9bda9b30956d4292bb3)
 
 * per Default werden sowohl Meter als auch Meilen angezeigt. Wenn wir nur Meter wollen, hilft uns das *Options-Objekt* beim Aufruf über die Boolean Option *imperial* weiter
 
@@ -184,7 +184,7 @@
     }).addTo(map);
     ```
 
-    [🔗 COMMIT](https://github.com/webmapping/wien/commit/e25791c3f71ed73eef5c961f42d8e6c9287237a5)
+    [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/e25791c3f71ed73eef5c961f42d8e6c9287237a5)
 
 
 ### d) Fullscreen control über Leaflet.fullscreen Plugin implementieren
@@ -205,7 +205,7 @@
     L.control.fullscreen().addTo(map);
     ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/00ad605d6cc122cb1ad4f6c723802a4504f2e13e)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/00ad605d6cc122cb1ad4f6c723802a4504f2e13e)
 
 
 ### e) Minimap control über Leaflet.MiniMap Plugin implementieren
@@ -230,7 +230,7 @@
         ).addTo(map);
         ```
 
-        [🔗 COMMIT](https://github.com/webmapping/wien/commit/87bc556aac44920828d4d9caa714d52c1eb31797)
+        [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/87bc556aac44920828d4d9caa714d52c1eb31797)
 
     * im wahrsten Sinne "neu" ist das **new** vor `L.Control.MiniMap` - es bewirkt, dass ein neues MiniMap-Objekt erzeugt wird und ist gleich zu setzen mit einem Aufruf `L.control.minimap()` **ohne** **new**. Grundsätzlich sollten alle Leaflet Plugins auf diese zwei Arten verwendbar sein, die meisten verwenden allerding die Form ohne *new* mit Kleinschreibung der Methode. Wir könnten also unsere bisherigen Plugins jeweils in zwei Arten verwenden:
     
@@ -249,4 +249,4 @@
         ).addTo(map);
         ```
 
-        [🔗 COMMIT](https://github.com/webmapping/wien/commit/5d86a38d5b8017a100c660fe2cae09b5a560b80c)
+        [🔗 COMMIT](https://github.com/webmapping22s/wien/commit/5d86a38d5b8017a100c660fe2cae09b5a560b80c)

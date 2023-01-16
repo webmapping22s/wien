@@ -17,7 +17,7 @@ Wir holen uns die Links zu den benötigten Dateien bei <https://cdnjs.com/librar
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js" integrity="sha512-OFs3W4DIZ5ZkrDhBFtsCP6JXtMEDGmhl0QPlmWYBJay40TT1n3gt2Xuw8Pf/iezgW9CdabjkNChRqozl/YADmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/64cb6e0a3d8cc46cdac4e67b9305b390f3226d7f)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/64cb6e0a3d8cc46cdac4e67b9305b390f3226d7f)
 
 Dann müssen wir nur noch beim Code für die Hotels bei der Definition des Overlays eine `markerClusterGroup` statt einer `featureGroup` verwenden
 
@@ -25,7 +25,7 @@ Dann müssen wir nur noch beim Code für die Hotels bei der Definition des Overl
 let overlay = L.markerClusterGroup();
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/1616492b9047f8e853f0779ea0efb6a79e61f44c)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/1616492b9047f8e853f0779ea0efb6a79e61f44c)
 
 **Voilà**, die Icons werden nun gruppiert. Bei den Kreisen der Gruppierung sieht man die Anzahl und Verbreitung der zusammengefassten Icons (als Fläche beim *mouseover*), beim Klick werden die Cluster so gut es geht aufgelöst.
 
@@ -37,4 +37,4 @@ let overlay = L.markerClusterGroup(
 );
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/f0751161e79889f4acdad4f901a34292bc58e3fa)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/f0751161e79889f4acdad4f901a34292bc58e3fa)

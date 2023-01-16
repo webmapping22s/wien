@@ -14,7 +14,7 @@ Wir beginnen mit dem HTML Code für das Formular. Es besteht aus einem Suchfeld,
 </form>
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/0546ce77b93988e45aca4ce5ff453430fec1f9d1)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/0546ce77b93988e45aca4ce5ff453430fec1f9d1)
 
 * nachdem wir später im Skript auf den Inhalt des Formulars zugreifen wollen, vergeben wir beim &lt;form> Element eine ID (`id="searchForm"`) - über sie werden wir Zugang zum Formular bekommen
 
@@ -38,7 +38,7 @@ Wir beginnen mit dem HTML Code für das Formular. Es besteht aus einem Suchfeld,
 </datalist>
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/53b0ea2dd00b5fa514d6407a0888f819f12fd3c7)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/53b0ea2dd00b5fa514d6407a0888f819f12fd3c7)
 
 Wie wir beim Neuladen des Browsers erkennen, werden &lt;datalist> Elemente nicht direkt angezeigt. Damit wir sie beim Suchfeld als Vorschläge auswählen können, müssen wir über `list="searchList"` beim Suchfeld vermerken, dass die Datenliste mit der ID *searchList* für das Autocomplete herangezogen werden soll.
 
@@ -46,7 +46,7 @@ Wie wir beim Neuladen des Browsers erkennen, werden &lt;datalist> Elemente nicht
 <input type="text" name="hotel" placeholder="Hotel suchen ..." list="searchList">
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/c3f4bba468dfa81808d302c0197689668cb144fe)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/c3f4bba468dfa81808d302c0197689668cb144fe)
 
  Das fertige Formular mit Autoccomplete über die Suchliste sieht damit so aus:
 
@@ -75,7 +75,7 @@ let searchList = document.querySelector("#searchList");
 searchList.innerHTML += `<option value="${geoJsonPoint.properties.BETRIEB}"></option>`;
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/7a9d70570ef73d7c39411dbf4e1872ff64143ed5)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/7a9d70570ef73d7c39411dbf4e1872ff64143ed5)
 
 * `document.querySelector()` kennen wir schon vom Neuseelandbeispiel. Es findet über den CSS-Selektor `#searchList` das Element mit der ID `searchList` - in unserem Fall also das &lt;datalist> Element und speichert es in der Varaiablen `searchList`. Über `searchList.innerHTML` können wir dann den Quellcode des &lt;datalist> Elements verändern. Wir verwenden `+=` um Markup an den bestehenden Inhalt anzuhängen.
 
@@ -99,7 +99,7 @@ form.suchen.onclick = function() {
 }
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/fb8e5fc23091db7a4f97d4d18e71744a7b47f1f4)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/fb8e5fc23091db7a4f97d4d18e71744a7b47f1f4)
 
 In der Variablen `form.hotel.value` wissen wir jetzt also, welches Hotel in der Suche ausgewählt wurde. Wie finden wir den dazugehörigen Marker mit Popup in unserer Karte? Dazu müssen wir alle gezeichneten Marker im GeoJSON Layer durchgehen und deren Namen mit dem gewünschten Namen vergleichen.
 
@@ -125,7 +125,7 @@ form.suchen.onclick = function() {
 }
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/1d8aa14ba27f20f68951159314d1a6ceb33a95ed)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/1d8aa14ba27f20f68951159314d1a6ceb33a95ed)
 
 In einer `if-Abfrage` überprüfen wir schließlich noch, ob der aktuelle Name des Hotels in `marker.feature.properties.BETRIEB` dem gesuchten Namen in `form.hotels.value` entspricht. Sind beide gleich, positionieren wir die Karte mit [map.setView()](https://leafletjs.com/reference.html#map-setview) auf die Koordinate des Icons. Als Zoomlevel wählen wir dabei 17, denn in diesem Level sind alle Markercluster aufgelöst. Mit [marker.openPopup()](https://leafletjs.com/reference.html#marker-openpopup) öffnen wir noch das Popup. Die `console.log` Zeilen kommentieren wir aus, oder löschen sie ganz.
 
@@ -142,11 +142,11 @@ form.suchen.onclick = function() {
 }
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/f4efa8539c3d1e258e6cb3ba74c215ddb7a39fa8)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/f4efa8539c3d1e258e6cb3ba74c215ddb7a39fa8)
 
 Unsere Testeintäge *eins, zwei, drei* im &lt;datalist> Element können wir auch noch löschen
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/56d21d8fa9968bab2cdaba9c3e6778b0adf6ea79)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/56d21d8fa9968bab2cdaba9c3e6778b0adf6ea79)
 
 ## 5. Leider ist die Suchliste nicht sortiert :-(
 
@@ -168,4 +168,4 @@ geojson.features.sort(function(a, b) {
 })
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/5d856433cf6eda6c86bbf103fcd283f75a1c2c5a)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/5d856433cf6eda6c86bbf103fcd283f75a1c2c5a)

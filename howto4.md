@@ -4,7 +4,7 @@
 
 Bevor wir mit den Buslinen weiterarbeiten, müssen wir natürlich den Kommentar beim Aufruf `loadLines("https://...")` löschen, damit sie auch angezeigt werden.
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/08124c2dc3515f674ef845eb6307117a30fa2510)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/08124c2dc3515f674ef845eb6307117a30fa2510)
 
 Wir erinnen uns an das erste *Usage  example* der [L.geoJSON Dokumentation](https://leafletjs.com/reference.html#geojson) das alles beinhaltet, was wir für unsere Linien benötigen.
 
@@ -46,7 +46,7 @@ return `
 `;
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/147ddae108bbdcf8eace00576ac7bd7061cb7e09)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/147ddae108bbdcf8eace00576ac7bd7061cb7e09)
 
 ### b) Linienfarben unterscheiden
 
@@ -83,7 +83,7 @@ return {
 }
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/000ba7a20e1407c12df96898af49a8894ec08c30)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/000ba7a20e1407c12df96898af49a8894ec08c30)
 
 Wir könnten mit der Pfad Option [weight](https://leafletjs.com/reference.html#path-weight) auch die Strichstärke auf 4 Pixel statt 3 Pixel (dem Defaultwert) ändern, oder die Linien über die Pfad Option [dashArray](https://leafletjs.com/reference.html#path-dasharray) strichliert zeichnen
 
@@ -97,13 +97,13 @@ return {
 
 * [dashArray](https://leafletjs.com/reference.html#path-dasharray) funktioniert so, dass in einem Array das Muster definiert wird. Der erste Wert bedeutet dabei *zeichne einen Strich mit dieser Länge*, der zweite Wert bedeutet *zeichne eine Lücke mit dieser Länge*. Diese Arrays können auch mehr als zwei Werte haben - der dritte wären dann wieder *Strich* der vierte *Lücke* usw.
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/7813cd66810ff18f04652a633d360ce1ee41ad44)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/7813cd66810ff18f04652a633d360ce1ee41ad44)
 
 ## Layer Fußgängerzonen verfeinern
 
 Wir löschen wieder den Kommentar beim `loadZones("https://...")` Aufruf und machen dann das Selbe wie bei den Linien
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/f066d4195c2feb214248ad6432a86097b33997d3)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/f066d4195c2feb214248ad6432a86097b33997d3)
 
 Danach können wir den `.bindPopup()` Code der Linien einfach kopieren und ans Ende des `L.geoJSON()` Aufrufs schreiben. Natürlich müssen wir das Popup auch gleich anpassen - wir verwenden die Attribute `ADRESSE`, `ZEITRAUM` und `AUSN_TEXT`. Nachdem bei den Attributen `ZEITRAUM` und `AUSN_TEXT` oft `null`, also keine Angabe steht, verwenden wir den [**Logical OR (||)**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR) Operator, um in diesen Fällen eine leere Zeichenkette statt *null* anzuzeigen.
 
@@ -119,7 +119,7 @@ L.geoJSON(geojson).bindPopup(function (layer) {
 }).addTo(overlay);
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/16a46067176b43b5f25324b8b10328af7a5b4060)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/16a46067176b43b5f25324b8b10328af7a5b4060)
 
 ### b) Flächen einfärben
 
@@ -138,5 +138,5 @@ L.geoJSON(geojson, {
 })
 ```
 
-[🔗 COMMIT](https://github.com/webmapping/wien/commit/27aef01d4606aec935af305cc388f5ab137fa9be)
+[🔗 COMMIT](https://github.com/webmapping22s/wien/commit/27aef01d4606aec935af305cc388f5ab137fa9be)
 
